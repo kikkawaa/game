@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1 class="title" id="title">脱出ゲーム</h1>
+
+    <button class="btn" id="btn">Click</button>
+
+    <p class="p" id="p"></p>
+    <h2 id="result">GAME OVER</h2>
+
+    <div id="sentakusi0">
+
+        <div id="sentakusi">
+            <button id="S_1">窓ガラスを割る</button>
+            <button id="S_2">ベットをどかす</button>
+        </div>
+    </div>
+    <!-- 1-2 -->
+    <div id="sentakusi1">
+        <div id="sentakusi">
+            <button id="S_3">左に差し込む</button>
+            <button id="S_4">右に差し込む</button>
+        </div>
+    </div>
+
+    <div id="nextarea">
+        <button id="next">NEXT</button>
+    </div>
+    
+    <script>
+        document.querySelector(".btn").addEventListener("click", start);
+
+        function start() {
+            document.querySelector(".p").textContent = "君は監禁されているどうする？";
+            document.getElementById("p").style.marginTop = "40px";
+
+            document.getElementById("btn").style.display = "none";
+            document.getElementById("title").style.display = "none";
+
+
+            document.getElementById("sentakusi0").style.display = "block";
+
+            //GAME OVER
+            document.getElementById("S_1").onclick=function(){
+                document.querySelector(".p").textContent = "窓ガラス硬すぎ!腕の骨が折れた...";
+                document.getElementById("sentakusi0").style.display = "none";
+                document.getElementById("result").style.display= "block";
+            }
+
+        
+            document.getElementById("S_2").onclick=function(){
+                document.querySelector(".p").textContent = "認証カードを手に入れた";
+                document.getElementById("sentakusi0").style.display = "none";
+                // document.getElementById("sentakusi1").style.display = "block";
+                document.getElementById("nextarea").style.display="block";
+                  //1-2
+                document.getElementById("next").onclick=function(){
+                    document.querySelector(".p").textContent = "カードを差し込む機会があるどうやら2つ差し込み口がある";
+                    document.getElementById("sentakusi1").style.display = "block";
+                }
+            }
+            //GAME CLEAR
+            document.getElementById("S_3").onclick=function(){
+                document.querySelector(".p").textContent = "窓ガラスが開いた";
+                document.getElementById("sentakusi1").style.display = "none";
+                document.getElementById("nextarea").style.display="none";
+                document.getElementById("result").style.display= "block";
+                document.getElementById("result").textContent="GAME CLEAR";
+                document.getElementById("result").style.color="cyan";
+            }
+
+             //GAME OVER
+             document.getElementById("S_4").onclick=function(){
+                document.querySelector(".p").textContent = "機会が爆発した";
+                document.getElementById("sentakusi1").style.display = "none";
+                document.getElementById("nextarea").style.display="none";
+                document.getElementById("result").style.display= "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

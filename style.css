@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.title{
+    font-size: 100px;
+    margin: 100px 0;
+    text-align: center;
+}
+.btn{
+    width: 160px;
+    font-size: 50px;
+}
+p{
+    font-size: 50px;
+    font-weight: bold;
+}
+#sentakusi0,#sentakusi1{
+    display: none;
+}
+#sentakusi{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+#S_1,#S_2,#S_3,#S_4{
+    padding: 10px 0;
+    font-size: 30px;
+    width: 40%;
+    margin: auto;
+}
+
+#result{
+    font-size: 80px;
+    font-weight: bold;
+    color: red;
+    display: none;
+    margin-top: 130px;
+}
+
+#next{
+    width: 160px;
+    font-size: 50px;
+    margin-top: 300px;
+}
+#nextarea{
+    display: none;
+}
